@@ -46,3 +46,6 @@ resource "aws_security_group" "game_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+output "public_ip" {
+  value = aws_instance.game_server.public_ip
+}
