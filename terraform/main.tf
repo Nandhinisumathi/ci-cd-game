@@ -7,7 +7,7 @@ resource "aws_instance" "game_server" {
   instance_type = "t3.micro"
   key_name      = "jenkinskkp"
 
-  security_groups = [aws_security_group.game_sg1.name]
+  security_groups = [aws_security_group.game-sg-jenkins.name]
 
   user_data = <<-EOF
               #!/bin/bash
@@ -22,8 +22,8 @@ resource "aws_instance" "game_server" {
   }
 }
 
-resource "aws_security_group" "game_sg1" {
-  name = "game-sg"
+resource "aws_security_group" "game-sg-jenkins" {
+  name = "game-sg-jenkins"
 
   ingress {
     from_port   = 22
